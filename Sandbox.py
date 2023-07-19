@@ -89,7 +89,8 @@ if played_before == "no":
     instructions()
 
 rounds_played = 0
-choose_instruction = ask_question()
+choose_instruction = ask_question('+')
+print(choose_instruction)
 
 # Ask user for # of rounds, <enter> for infinite mode
 rounds = check_rounds()
