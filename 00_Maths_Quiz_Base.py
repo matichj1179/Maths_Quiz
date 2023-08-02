@@ -133,6 +133,11 @@ while end_game == "no":
     # rest of loop / game
     expected_result = ask_question(operation)
     user_answer = int_check("Enter your answer: ", exit_code="xxx")
+    if user_answer == "xxx":
+        rounds_played -= 1
+
+    if user_answer == "xxx":
+        break
 
     if user_answer == expected_result:
         print("Correct!")
@@ -140,13 +145,11 @@ while end_game == "no":
     else:
         print(f"Wrong! The correct answer is {expected_result}")
 
-    if user_answer == "xxx":
-        rounds_played = rounds
+    if rounds_played == rounds:
+        break
 
     print(f'You chose {user_answer}')
     print("")
 
-    if rounds_played == rounds:
-        print("***Game Over***")
-        print(f"\nYou scored {score} out of {rounds}.")
-        break
+print("***Game Over***")
+print(f"\nYou scored {score} out of {rounds_played}.")
